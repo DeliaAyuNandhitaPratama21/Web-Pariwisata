@@ -1,0 +1,385 @@
+/* Untuk mengatur gaya dasar seluruh elemen pada halaman: margin dan padding diatur ke 0 agar halaman dimulai tanpa jarak. box-sizing: border-box memastikan padding dan border dimasukkan dalam perhitungan lebar elemen. scroll-behavior: smooth untuk membuat scrolling antar-bagian menjadi halus */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+
+/* Untuk menentukan font dasar untuk halaman menjadi Arial, sans-serif */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Untuk mengatur warna teks untuk semua elemen heading dan elemen strong menjadi #232e35 agar lebih menonjol dibandingkan teks lain */
+h1, h2, h3, h4, h5, h6, strong {
+    color: #232e35;
+}
+
+/* Untuk mengatur ukuran dan spasi baris teks untuk paragraf agar mudah dibaca */
+p {
+    font-size: 1rem; 
+    line-height: 1.9rem; 
+}
+
+/* Untuk memberikan warna abu (#656d72) pada teks paragraf, label, input, textarea, dan item list */
+p, span, label, input, textarea, li {
+    color: #656d72;
+}
+
+/* Untuk menghapus garis bawah pada semua link */
+a {
+    text-decoration: none;
+}
+
+/* Untuk mengatur lebar kontainer utama ke 1200px dan membuatnya berada di tengah dengan margin otomatis. Mengurangi lebar menjadi 90% jika layar kurang dari 1200px */
+.main-container {
+    width: 1200px;
+    margin: 0 auto;
+}
+  
+@media screen and (max-width: 1200px) {
+    .main-container {
+      width: 90%;
+    }
+}
+
+/* Untuk membuat gaya judul bagian (section title) dengan ukuran font besar, warna merah (#a80000), dan margin di sekitar untuk memisahkan dari elemen lain */
+.section-title {
+    margin: 1rem 0 4rem;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    color: #000000;
+}
+
+/* Untuk membuat gaya judul kecil di atas judul utama (pre-title) dengan huruf besar, warna abu (#656d72), jarak antar huruf 0.5rem, dan garis horizontal di sebelah kiri */
+.pre-title {
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    color: #656d72;
+    position: relative;
+    padding-left: 40px;
+    width: fit-content;
+    font-weight: 400;
+    font-size: 0.9rem;
+    margin: 0 auto;
+}
+
+.pre-title::before {
+    content: "";
+    width: 30px;
+    height: 1px;
+    background: #d9d9d9;
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 50%;
+}
+
+/* Untuk mengatur tampilan grid dengan 3 kolom, yang otomatis menyesuaikan ukuran kolom minimum 250px sesuai ukuran layar */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+}
+
+
+/* Untuk membuat gaya navigasi dengan distribusi fleksibel antara logo dan menu, serta padding atas dan bawah */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 0;
+}
+
+/* Untuk mengatur tampilan menu navigasi tanpa bullet point dan memberikan jarak 3rem antar item */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+}
+
+/* Untuk menyelaraskan item menu secara vertikal agar rata dengan item lainnya */
+nav ul li {
+  display: flex;
+  align-items: center;
+}
+
+/* Untuk mengatur warna teks link navigasi sesuai variabel warna utama */
+nav ul li a {
+  color: #232e35;
+}
+
+/* Untuk mengatur gaya logo dengan font tebal dan ukuran font besar */
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+/* Untuk mengatur warna logo */
+.logo a {
+    color: #000000;
+}
+
+/* Untuk mengatur header background */
+.header-background {
+  position: relative;
+  color: white;
+  height: 500px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.header-background::before {
+  content: "";
+  background-image: url(/image/guci-forest.jpg); /* Ganti dengan path gambar yang sesuai */
+  background-size: cover;
+  background-position: center;
+  filter: blur(3px); /* Blur hanya diterapkan pada gambar */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Pastikan background berada di belakang teks */
+}
+
+
+
+
+/* Untuk mengatur hero section memiliki tinggi 720px dan grid 2 kolom, menempatkan konten secara seimbang */
+#hero {
+    height: 720px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+/* Untuk mengatur nama pada bagian hero dengan font besar dan tebal, margin atas dan bawah untuk memberikan ruang */
+  .hero-name {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0.5rem 0 1rem;
+  }
+
+/* Untuk mengatur nama dan warna pada hero */
+  .hero-name span {
+    color: #ffffff
+  }
+
+/* Untuk mempertebal paragraf*/
+  .hero-p strong {
+    color: #ffffff
+    
+  }
+
+  #header-title {
+    background-color: #fbfbfb;
+    padding: 6rem 0;
+  }
+  
+  .header-title {
+    text-align: center;
+    color: #000000;
+  }
+
+  .header-title {
+  padding: 3rem 2rem;
+  text-align: center;
+  background: #fff;
+  border-radius: 0.7rem;
+}
+
+/*Untuk mengatur home section dengan latar belakang abu (#fbfbfb) dan padding besar agar terlihat menonjol */
+#home {
+  background-color: #fbfbfb;
+  padding: 6rem 0;
+}
+
+/* Untuk mengatur gaya konten home dengan padding, background putih, dan border radius */
+.home {
+  padding: 3rem 2rem;
+  text-align: center;
+  background: #fff;
+  border-radius: 0.7rem;
+}
+
+
+/* Untuk mengatur content section dengan padding besar */
+#content {
+  padding: 6rem 0;
+}
+
+/* Untuk mengatur border radius, overflow, dan border pada setiap elemen content */
+.content {
+  border-radius: 0.7rem;
+  overflow: hidden;
+  border: 1px solid #f1f1f1;
+}
+
+/* Untuk mengatur tinggi gambar cover pada content */
+.content-cover {
+  height: 250px;
+}
+
+/* Untuk mengatur ukuran gambar content */
+.content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Untuk mengatur padding di dalam content */
+.content-info {
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+/* Untuk mengatur gaya judul content dengan penyelarasan dan jarak antar elemen */
+.content-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Untuk mengatur font dan ukuran pada judul content */
+.content h4 {
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+
+/* Untuk mengatur tampilan tag content */
+.content-tags {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+/* Untuk memberikan border dan padding pada tag content */
+.content-tags div {
+  font-size: 0.9rem;
+  border: 1px solid #f1f1f1;
+  padding: 0.4rem 1rem;
+  color: #656d72;
+}
+
+/* Untuk membuat button booking */
+.booking-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #008000; /* Ganti warna sesuai keinginan */
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 1rem;
+}
+
+.booking-button:hover {
+  background-color: #00b300;
+}
+
+
+
+
+/* Untuk mengatur bagian kontak dengan grid dan jarak antar elemen */
+#about {
+  padding: 6rem 0;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 3rem;
+}
+
+.about-form div {
+  margin-bottom: 1.4rem;
+}
+
+/* Untuk mengatur gaya dasar input dan textarea di dalam form kontak */
+.about-form input, 
+.about-form textarea {
+  width: 100%;
+  padding: 0.75rem 1.3rem;
+  font-family: "Roboto", sans-serif;
+  background: #fbfbfb;
+  border: 1px solid #f1f1f1;
+  border-radius: 3px;
+  resize: none;
+}
+
+/* Untuk mengatur gaya placeholder */
+.about-form input::placeholder, 
+.about-form textarea::placeholder {
+  color: #9d9fa1;
+}
+
+.about-form input:focus,
+.about-form textarea:focus {
+  outline: none;
+  border: 1px solid #7d7d7d;
+}
+
+/* Untuk mengatur gaya tombol submit */
+.btn-submit {
+  width: 100%;
+  padding: 0.75rem 1.3rem;
+  background-color: #008000;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.btn-submit:hover {
+  background-color: #00b300;
+}
+
+.about-item {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.about-item-icon {
+  background: #fbfbfb;
+  width: 53px;
+  height: 53px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-item-icon svg {
+  fill: #000000;
+}
+
+.about-item-detail h4 {
+  margin-bottom: 0.6rem;
+}
+
+
+
+
+/* Untuk mengatur bagian footer dengan ikon sosial */
+footer {
+  padding: 4rem 0;
+  background: #fbfbfb;
+  text-align: center;
+}
+
+.footer-icons svg {
+  fill: #000000;
+}
+.footer-icons a:hover svg {
+  fill: #000;
+}
